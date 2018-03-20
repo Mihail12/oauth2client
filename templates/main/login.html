@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}ЄІАС УМП{% endblock %}</title>
+        {% load static %}
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{% static "images/favicon.ico" %}" />
+        <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" />
+        <link href="{% static "bootstrap/css/dashboard.css" %}" rel="stylesheet" />
+        <script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+        <script src="{% static "js/sockjs-0.3.4.min.js" %}"></script>
+        <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/user_profile/cryptoautograph.js" %}"></script>
+        <script src="{% static "js/user_profile/login.js" %}"></script>
+        <style>
+            h1, h2, h3, h4, h5, h6 {font-family: 'Lora', Georgia, Times, serif;}
+            .head_text h1{text-align: center; text-shadow: 0px 0px 0px #000000; color: #ffffff;}
+            body {background-color: #1F406C;}
+            #dms_logo{margin: 0 auto;}
+            #login{margin-top: 7px;}
+        </style>
+    </head>
+    <body id="body_id">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 main" >
+                    <div class="row">
+                        <div class="col-md-12, head_text">
+                            <h1>Єдина інформаційно-аналітична система</h1><h1>управління міграційними процесами</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-offset-4 col-md-4 col-lg-4" >
+                            <img class="img-responsive" id="dms_logo" src="{% static "images/logo.png" %}" alt="" width="80%"/>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="width: 300px; padding: 10px; margin: auto">
+                        <form action="{% url 'social:begin' 'dmsu-oauth2' %}">
+                            <button id="btn-login" type="submit" class="btn btn-primary btn-block">
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;Вхід</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
